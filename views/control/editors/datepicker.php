@@ -1,0 +1,1 @@
+<?php echo Form::input($field, date('d.m.Y', $item->$field?$item->$field:time()), array('class' => 'datepicker'))?>

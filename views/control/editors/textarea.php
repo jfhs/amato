@@ -1,0 +1,1 @@
+<?php echo Form::textarea(isset($name)?$name:$field, $item->$field, array('class' => 'span12'))?>

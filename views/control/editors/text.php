@@ -1,0 +1,1 @@
+<?php echo Form::input(isset($name)?$name:$field, $item->$field, array('class' => 'span12'))?>

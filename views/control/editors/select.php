@@ -1,0 +1,1 @@
+<?php echo Form::select($field, $params['variants'], $item->$field)?>

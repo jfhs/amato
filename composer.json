@@ -1,0 +1,22 @@
+{
+    "name": "jfhs/amato",
+    "type": "kohana-module",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "jfhs",
+            "email": "romoper@yandex.ru"
+        }
+    ],
+    "require": {
+        "kohana/core": "3.3.*",
+        "kohana/database": "3.3.*",
+        "kohana/orm": "3.3.*"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.3.x"
+        }
+    }
+}
