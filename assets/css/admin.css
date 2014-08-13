@@ -1064,3 +1064,11 @@ form.bs-docs-example {
 .modal.fade.in {
     top: 50%;
 }
+
+.sub_inline {
+    width: 100%;
+}
+
+.sub_inline input {
+    width: 95%;
+}

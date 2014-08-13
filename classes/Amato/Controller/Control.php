@@ -65,7 +65,7 @@ class Amato_Controller_Control extends Controller_Template {
         $this->redirect('');
     }
 
-    protected static function recursive_update_fields(ORM $model, $fields, $files = null) {
+    protected static function recursive_update_fields(ORM $model, $fields, $files = null, $delete = null) {
         if (!is_array($fields)) {
             return;
         }
@@ -92,6 +92,9 @@ class Amato_Controller_Control extends Controller_Template {
 						continue;
 					}
 
+                    if ($delete && isset($delete[$model_name][$id])) {
+                        continue;
+                    }
                     if ($id <= 0) {
                         $id = null;
                     }
@@ -104,7 +107,7 @@ class Amato_Controller_Control extends Controller_Template {
                             continue;
                         }
                     }
-                    self::recursive_update_fields($m, $ifields);
+                    self::recursive_update_fields($m, $ifields, null, $delete);
                 }
             } else {
                 $model->$field = $value;
@@ -125,7 +128,7 @@ class Amato_Controller_Control extends Controller_Template {
                     $foreign_key = $has_many[$field]['foreign_key'];
                 }
                 $m->$foreign_key = $model->id;
-                self::recursive_update_fields($m, $o);
+                self::recursive_update_fields($m, $o, null, $delete);
             }
         }
     }
@@ -180,7 +183,7 @@ class Amato_Controller_Control extends Controller_Template {
             self::convert_files($fields, $files);
         }
 
-        self::recursive_update_fields($model, $fields);
+        self::recursive_update_fields($model, $fields, null, $this->request->post('__delete'));
     }
 
     public function action_literal() {
@@ -268,7 +271,10 @@ class Amato_Controller_Control extends Controller_Template {
                     if ($delete) {
                         foreach($delete as $model=>$ids) {
                             foreach($ids as $rid=>$tmp) {
-                                ORM::factory($model, $rid)->delete();
+                                $to_delete = ORM::factory($model, $rid);
+                                if ($to_delete->loaded()) {
+                                    $to_delete->delete();
+                                }
                             }
                         }
                     }

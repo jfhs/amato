@@ -15,7 +15,19 @@ $(document).ready(function() {
         var e = tbl.find("tr:last").clone();
         tbl.append(e);
         return false;
-    })
+    });
+    $(".add_more_sub").click(function() {
+        var tbl = $(this).prevAll("table");
+        var e = tbl.find("tr:last").clone();
+        tbl.append(e);
+        var id = parseInt(e.attr("data-id"));
+        var newId = id - 1;
+        e.find("input,checkbox,textarea,select").each(function() {
+            var el = $(this);
+            el.attr("name", el.attr("name").replace("[" + id + "]", "[" + newId + "]"));
+        });
+        return false;
+    });
     $("#lang_select").change(function() {
         var lang = $(this).val();
         $("[data-lang]").each(function() {
