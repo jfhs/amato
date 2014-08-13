@@ -6,6 +6,7 @@ class Amato_Controller_Control extends Controller_Template {
     protected $user;
 	protected $login;
 	protected $password;
+    protected $assets_path = 'modules/amato/assets/';
     /**
      * @var Session
      */
@@ -31,6 +32,7 @@ class Amato_Controller_Control extends Controller_Template {
             $this->template->bind('menu', static::$menu);
             $this->template->messages = array();
         }
+        $this->template->assets_path = $this->assets_path;
     }
 
 	protected function check_auth($login, $password) {

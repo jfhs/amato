@@ -8,9 +8,9 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <?php echo HTML::style('media/js/jquery.loadmask.css');?>
-    <?php echo HTML::style('media/css/bootstrap.css');?>
-    <?php echo HTML::style('media/js/jquery-ui-1.10.2/themes/base/jquery-ui.css');?>
+    <?php echo HTML::style($assets_path.'js/jquery.loadmask.css');?>
+    <?php echo HTML::style($assets_path.'css/bootstrap.css');?>
+    <?php echo HTML::style($assets_path.'js/jquery-ui-1.10.2/themes/base/jquery-ui.css');?>
 
     <style type="text/css">
         body {
@@ -21,9 +21,9 @@
             padding: 9px 0;
         }
     </style>
-    <?php echo HTML::style('media/css/bootstrap-responsive.css');?>
-	<?php echo HTML::style('media/css/tagmanager.css');?>
-    <?php echo HTML::style('media/css/admin.css');?>
+    <?php echo HTML::style($assets_path.'css/bootstrap-responsive.css');?>
+	<?php echo HTML::style($assets_path.'css/tagmanager.css');?>
+    <?php echo HTML::style($assets_path.'css/admin.css');?>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -31,19 +31,14 @@
     <![endif]-->
 
     <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
-    <link rel="shortcut icon" href="ico/favicon.png">
-    <?php echo HTML::script('media/js/jquery.js');?>
-    <?php echo HTML::script('media/js/jquery-ui-1.10.2/ui/minified/jquery-ui.min.js');?>
-    <?php echo HTML::script('media/js/jquery-ui-1.10.2/ui/i18n/jquery.ui.datepicker-ru.js');?>
-    <?php echo HTML::script('media/js/bootstrap.min.js');?>
-    <?php echo HTML::script('media/js/ckeditor/ckeditor.js');?>
-    <?php echo HTML::script('media/js/ckfinder/ckfinder.js');?>
-	<?php echo HTML::script('media/js/tagmanager.js');?>
-    <?php echo HTML::script('media/js/admin.js');?>
+    <?php echo HTML::script($assets_path.'js/jquery.js');?>
+    <?php echo HTML::script($assets_path.'js/jquery-ui-1.10.2/ui/minified/jquery-ui.min.js');?>
+    <?php echo HTML::script($assets_path.'js/jquery-ui-1.10.2/ui/i18n/jquery.ui.datepicker-ru.js');?>
+    <?php echo HTML::script($assets_path.'js/bootstrap.min.js');?>
+    <?php echo HTML::script($assets_path.'js/ckeditor/ckeditor.js');?>
+    <?php echo HTML::script($assets_path.'js/ckfinder/ckfinder.js');?>
+	<?php echo HTML::script($assets_path.'js/tagmanager.js');?>
+    <?php echo HTML::script($assets_path.'js/admin.js');?>
 </head>
 
 <body style="padding-top: 0px;">
