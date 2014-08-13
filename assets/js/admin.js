@@ -94,7 +94,7 @@ $(document).ready( function(){
         var data = {};
         data[attr] = status;
         $.ajax({
-            url: '/index.php/control/' + type + '/' + id,
+            url: baseUrl + 'control/' + type + '/' + id,
             data: data,
             type: 'POST',
             error: function() {
