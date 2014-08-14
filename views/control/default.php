@@ -1,4 +1,7 @@
 <h3><?php echo $item->loaded()?'Редактирование':'Создание'?> <?php echo htmlspecialchars($item->object_title())?></h3>
+
+<?php echo Form::select('', ORM::$languages, I18n::lang(), array('id' => 'lang_select'))?>
+
 <?php if (isset($tabs)):?>
     <ul class="nav nav-tabs">
         <li class="active"><a href="#props" data-toggle="tab">Общие</a></li>

@@ -1072,3 +1072,8 @@ form.bs-docs-example {
 .sub_inline input {
     width: 95%;
 }
+#lang_select {
+    position:absolute;
+    right:20px;
+    top:80px;
+}
